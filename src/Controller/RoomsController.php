@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Rooms Controller
@@ -37,9 +38,23 @@ class RoomsController extends AppController
         $room = $this->Rooms->get($id, [
             'contain' => []
         ]);
+        
 
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
+        
+        $time=new Time();
+        $liste=$this->Rooms->Showtimes->find()->where(['room_id' => $id, 'start' => $time])->contain(['Rooms', 'Movies']);
+        $this->set('showtimes', $liste);
+        
+        $tableau=array();
+        $j=0;
+        
+        foreach ($liste as $i)
+        {
+            $tableau[$j]=$i;
+            $j=$j+1;
+        }
     }
 
     /**

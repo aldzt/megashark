@@ -2,6 +2,7 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Room $room
+ * @var \App\Model\Entity\ $movie
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -41,6 +42,36 @@
     </table>
     <div class="related">
         <h4><?= __('Related Showtimes') ?></h4>
+        <table>
+        <thead>
+        <tr>
+            <th scope="col">Sunday</th>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+            <th scope="col">Saturday</th>
+        </tr>
+        </thead>
+    <table>
+    <div id="contentBox" style="margin:0px auto; width:70%">
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+                    <table style="float:left; margin:0; width:14%;">
+                <tr><td></td></tr>            </table>
+              
+    </div>
         <?php if (!empty($room->showtimes)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
